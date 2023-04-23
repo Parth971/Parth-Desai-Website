@@ -148,3 +148,5 @@ GitHub.sublime-settings
 !.elasticbeanstalk/*.global.yml
 
 credentials.csv
+*.ppk
+*.pem
