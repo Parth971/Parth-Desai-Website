@@ -1,5 +1,9 @@
-DATABASE_URL=url of postgres db
+DB_NAME=pweb
+DB_USER=postgres
+DB_PASS=postgres
+DB_PORT=5432
+DB_HOST=localhost
+
 DJANGO_SECRET_KEY=secrete key
 DJANGO_ALLOWED_HOSTS=localhost
 DEBUG=True
-DEVELOPMENT_MODE=True
