@@ -1,9 +1,433 @@
 {% include 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
 {% block body %}
 
-Hi there,
+<div class="navigation-bar">
+    {% include "nav.html" %}
+</div>
 
-My name is <b>Parth</b>.
+<!-- Intro Section -->
+<section id="introduction">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="description_container">
+                    <div class="description">
+                        <span class="start_text">Hi ✌️</span>
+                        <span class="name_text">I'm <b>Parth</b> </span>
+                        <span class="welcome_text">
+                            I Welcome you to my website 🙂
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="image_container">
+                    <img src="{% static 'images/self.jpg' %}" class="self_image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="heading">
+                    About Me
+                </div>
+                <div class="about_description_container">
+                    To obtain a position that will allow me to utilize my technical skills and experience 🤌.
+                    I wanted to earn a job which provides me job satisfaction 🤤 and self-development
+                    and help me achieve personal as well as organisational goals 😜.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="heading">
+                    Skills
+                </div>
+                <div class="container-fluid skills_container">
+                    <div class="row">
+                        <div class="col-md-3 skill_box">
+                            <div class="skill_logo">
+                                <img src="{% static 'images/python-logo.png' %}">
+                            </div>
+                            <div class="skill_name">
+                                <span class="skill_text">Python</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 skill_box">
+                            <div class="skill_logo">
+                                <img src="{% static 'images/django-logo.png' %}">
+                            </div>
+                            <div class="skill_name">
+                                <span class="skill_text">Django</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 skill_box">
+                            <div class="skill_logo">
+                                <img src="{% static 'images/redis-logo.jpg' %}">
+                            </div>
+                            <div class="skill_name">
+                                <span class="skill_text">Redis</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 skill_box">
+                            <div class="skill_logo">
+                                <img src="{% static 'images/java-logo.png' %}">
+                            </div>
+                            <div class="skill_name">
+                                <span class="skill_text">Java</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 skill_box">
+                            <div class="skill_logo">
+                                <img src="{% static 'images/Amazon-S3-Logo.svg' %}">
+                            </div>
+                            <div class="skill_name">
+                                <span class="skill_text">AWS S3</span>
+                            </div>
+                        </div>
+                        <div class="col-md-3 skill_box">
+                            <div class="skill_logo">
+                                <img src="{% static 'images/AWS-Lambda_Function_Logo.png' %}">
+                            </div>
+                            <div class="skill_name">
+                                <span class="skill_text">AWS Lambda Function</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Work  -->
+<section id="works">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="heading">
+                    Projects
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/aws_project.png' %}" class="card-img-top" alt="AWS Project Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Lambda Function</h5>
+                      <p class="card-text">Create a lambda function which triggers on S3 bucket manipulation.</p>
+                      <a href="#" class="btn btn-primary" id="view_project">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/aws_project.png' %}" class="card-img-top" alt="AWS Project Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Lambda Function</h5>
+                      <p class="card-text">Create a lambda function which triggers on S3 bucket manipulation.</p>
+                      <a href="#" class="btn btn-primary" id="view_project">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/aws_project.png' %}" class="card-img-top" alt="AWS Project Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Lambda Function</h5>
+                      <p class="card-text">Create a lambda function which triggers on S3 bucket manipulation.</p>
+                      <a href="#" class="btn btn-primary" id="view_project">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/aws_project.png' %}" class="card-img-top" alt="AWS Project Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Lambda Function</h5>
+                      <p class="card-text">Create a lambda function which triggers on S3 bucket manipulation.</p>
+                      <a href="#" class="btn btn-primary" id="view_project">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/aws_project.png' %}" class="card-img-top" alt="AWS Project Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Lambda Function</h5>
+                      <p class="card-text">Create a lambda function which triggers on S3 bucket manipulation.</p>
+                      <a href="#" class="btn btn-primary" id="view_project">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/aws_project.png' %}" class="card-img-top" alt="AWS Project Image">
+                    <div class="card-body">
+                      <h5 class="card-title">Lambda Function</h5>
+                      <p class="card-text">Create a lambda function which triggers on S3 bucket manipulation.</p>
+                      <a href="#" class="btn btn-primary" id="view_project">View Project</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Blogs  -->
+<section id="blogs">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h3 class="mb-3">Blogs</h3>
+            </div>
+            <div class="col-6 text-right">
+                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                    <i class="fa fa-arrow-left"></i>
+                </a>
+                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532781914607-2031eca2f00d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=7c625ea379640da3ef2e24f20df7ce8d">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=42b2d9ae6feb9c4ff98b9133addfb698">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3d2e8a2039c06dd26db977fe6ac6186a">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532771098148-525cefe10c23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=3f317c1f7a16116dec454fbc267dd8e4">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532715088550-62f09305f765?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ebadb044b374504ef8e81bdec4d0e840">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=0754ab085804ae8a3b562548e6b4aa2e">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532777946373-b6783242f211?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=8ac55cf3a68785643998730839663129">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1532763303805-529d595877c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=5ee4fd5d19b40f93eadb21871757eda6">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Special title treatment</h4>
+                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="footer">
+    <div class="container">
+         <div class="row">
+              <div class="col-md-5">
+                   <div class="contact-content">
+                        <h1>Contact Us</h1>
+                        <p>Let's make something new, different and more meaningful or make thing more visual or
+                             conceptual?</p>
+                        <div class="contact-group">
+                             <div class="contact-item">
+                                  <div class="icon-container">
+                                       <i class="fas fa-phone-square-alt"></i>
+                                  </div>
+                                  <div class="contact-details">
+                                       <p>Call Me</p>
+                                       <p>+123 456 7890</p>
+                                  </div>
+                             </div>
+                             <div class="contact-item">
+                                  <div class="icon-container">
+                                       <i class="far fa-envelope"></i>
+                                  </div>
+                                  <div class="contact-details">
+                                       <p>Email</p>
+                                       <p>Email info@coder.com</p>
+                                  </div>
+                             </div>
+                             <div class="contact-item">
+                                  <div class="icon-container">
+                                       <i class="fas fa-map-marker-alt"></i>
+                                  </div>
+                                  <div class="contact-details">
+                                       <p>Address</p>
+                                       <p>27 Division St, New York, <br> NY 10002, USA</p>
+                                  </div>
+                             </div>
+                             <p>Find Me on</p>
+                             <div class="link-icons-group">
+                                  <div class="link-icon-container">
+                                       <a href="#"> </a><i class="fab fa-behance"></i></a>
+                                       <a href="#"> </a><i class="fab fa-dribbble"></i></a>
+                                       <a href="#"> </a><i class="fab fa-instagram"></i></a>
+                                       <a href="#"> </a><i class="fab fa-linkedin-in"></i></a>
+                                       <a href="#"> </a><i class="fab fa-pinterest"></i></a>
+                                  </div>
+                             </div>
+                        </div>
+                   </div>
+              </div>
+              <div class="col-md-7">
+                   <div class="contact-form">
+                        <h1>Drop a Line</h1>
+                        <form>
+                             <div class="row">
+                                  <div class="col-md-6">
+                                       <div class="input-margin-top">
+                                            <input type="text" placeholder="Name">
+                                       </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                       <div class="input-margin-top">
+                                        <input type="text" placeholder="Phone">
+                                       </div>
+                                  </div>
+                             </div>
+                             <div class="row">
+                                  <div class="col-md-12">
+                                    <input type="text" placeholder="Email">
+                                       
+                                  </div>
+                                  
+                             </div>
+                             <div class="row">
+                                  <div class="col-md-12">
+                                       <textarea name="txtarea" id="" cols="30" rows="10" placeholder="Message"
+                                            class="textarea-margin"></textarea>
+                                  </div>
+                             </div>
+                             <div class="row">
+                                  <div class="col-md-4">
+                                       <button type="submit"
+                                            class="btn btn-theme button-theme-style">Submit</button>
+                                  </div>
+                             </div>
+                        </form>
+                   </div>
+              </div>
+         </div>
+         <div class="row">
+              <div class="col-md-12">
+                   <div class="copyright">
+                        <hr>
+                        <p>Copyright &copy; 2023 Parth Desai. All Rights Reserved.</p>
+                   </div>
+              </div>
+         </div>
+    </div>
+</section>
 
 {% endblock %}
