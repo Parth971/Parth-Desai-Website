@@ -21,6 +21,11 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, **kwargs):
+        self.title = "_".join(self.title.lower().split(' '))
+        super(Post, self).save(**kwargs)
+
+
 
 class Comment(models.Model):
     body = models.TextField()
