@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     # apps
     'dashboard.apps.DashboardConfig',
     'accounts.apps.AccountsConfig',
+    'blog.apps.BlogConfig',
+
+    # third party apps
+    'django_cleanup.apps.CleanupConfig',  # this should be always last in list
 ]
 
 MIDDLEWARE = [
@@ -122,3 +126,6 @@ AUTH_USER_MODEL = 'accounts.User'
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
