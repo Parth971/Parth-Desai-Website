@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'dashboard.apps.DashboardConfig',
     'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
+    'project.apps.ProjectConfig',
 
     # third party apps
     'django_cleanup.apps.CleanupConfig',  # this should be always last in list
