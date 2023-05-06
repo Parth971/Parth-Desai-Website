@@ -212,6 +212,10 @@ body, html {
 .contact-details>p:last-child {
 	font-size: 20px;
 }
+.link-icon-container a {
+    text-decoration: none;
+    color: white;
+}
 .link-icon-container i{
 	font-size: 35px;
 	margin-right: 30px;
