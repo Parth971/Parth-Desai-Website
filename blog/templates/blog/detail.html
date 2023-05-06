@@ -1,0 +1,12 @@
+{% include 'base.html' %}
+<!--{% load static %}-->
+
+{% block css %}
+<!--    <link rel="stylesheet" href="{% static 'css/home.css' %}">-->
+{% endblock %}
+
+{% block body %}
+
+{{ blog.body|safe }}
+
+{% endblock %}

@@ -11,11 +11,11 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200)
-    body = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     categories = models.ManyToManyField(Category)
     created_at = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=200)
+    body = models.TextField()
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
@@ -24,7 +24,6 @@ class Post(models.Model):
     def save(self, **kwargs):
         self.title = "_".join(self.title.lower().split(' '))
         super(Post, self).save(**kwargs)
-
 
 
 class Comment(models.Model):
