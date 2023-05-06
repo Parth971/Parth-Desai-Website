@@ -1,6 +1,7 @@
 from django.db import models
 
 from accounts.models import User
+from blog.utils import upload_post_image
 
 
 class Category(models.Model):
@@ -15,6 +16,8 @@ class Post(models.Model):
     categories = models.ManyToManyField(Category)
     created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=200)
+    description = models.TextField()
+    image = models.ImageField(upload_to=upload_post_image)
     body = models.TextField()
     updated_at = models.DateTimeField(auto_now=True)
 
