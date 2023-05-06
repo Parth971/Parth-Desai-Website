@@ -7,7 +7,7 @@
 
 {% block body %}
 
-<div class="navigation-bar">
+<div class="navigation-bar" style="position: fixed; width: 100%; opacity: 0.9; z-index: 2">
     {% include "nav.html" %}
 </div>
 
@@ -95,8 +95,8 @@
         </div>
         <div class="row">
 
-            {% for project in projects %}
-            <div class="col-md-3">
+            {% for project in projects|slice:"8" %}
+            <div class="col-md-3 d-flex align-items-stretch">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Project Image">
                     <div class="card-body">
@@ -107,6 +107,10 @@
                 </div>
             </div>
             {% endfor %}
+
+            <div class="col-md-12 text-center">
+                <a href="{% url 'project_list' %}" class="btn btn-primary">View All Projects</a>
+            </div>
             
         </div>
     </div>
@@ -141,7 +145,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{ blog.title|title }}</h4>
                                             <p class="card-text">{{ blog.description }}</p>
-                                            <a href="#" class="btn btn-primary">View</a>
+                                            <a href="{% url 'blog_detail' blog_id=blog.id %}" class="btn btn-primary">View</a>
                                         </div>
                                     </div>
                                 </div>
@@ -160,7 +164,7 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{ blog.title|title }}</h4>
                                             <p class="card-text">{{ blog.description }}</p>
-                                            <a href="#" class="btn btn-primary">View</a>
+                                            <a href="{% url 'blog_detail' blog_id=blog.id %}" class="btn btn-primary">View</a>
                                         </div>
                                     </div>
                                 </div>

@@ -1,11 +1,16 @@
 {% include 'base.html' %}
-<!--{% load static %}-->
+{% load static %}
 
 {% block css %}
-<!--    <link rel="stylesheet" href="{% static 'css/home.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock %}
 
 {% block body %}
+
+
+<div class="navigation-bar">
+    {% include "nav.html" %}
+</div>
 
 {{ blog.body|safe }}
 

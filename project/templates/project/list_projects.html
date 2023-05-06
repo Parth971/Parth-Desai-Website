@@ -1,0 +1,44 @@
+{% include 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block body %}
+
+
+<div class="navigation-bar">
+    {% include "nav.html" %}
+</div>
+
+
+<section id="works">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="heading">
+                    Projects
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-md-3 d-flex align-items-stretch">
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Project Image">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ project.title|title }}</h5>
+                      <p class="card-text">{{ project.description }}</p>
+                      <a href="{{ project.link }}" target="_blank" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
