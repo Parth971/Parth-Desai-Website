@@ -2,298 +2,337 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_common.css' %}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_responsive.css' %}">
 {% endblock %}
+
+{% block js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock js %}
 
 {% block body %}
 
-<div class="navigation-bar" style="position: fixed; width: 100%; opacity: 0.9; z-index: 2">
+<div class="navigation-bar">
     {% include "nav.html" %}
 </div>
 
-<!-- Intro Section -->
+
 <section id="introduction">
+
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="description_container">
-                    <div class="description">
-                        <span class="start_text">Hi ✌️</span>
-                        <span class="name_text">I'm <b>Parth</b> </span>
-                        <span class="welcome_text">
-                            I Welcome you to my website 🙂
-                        </span>
+            <div class="col-md-6">
+                <div class="col-md-6"></div>
+                <div id="introduction_container_wrapper">
+                    <ul>
+                        <li>
+                            I AM A <b>SOFTWARE DEVELOPER</b>
+                        </li>
+                        <li>
+                            <b>PARTH DESAI</b>
+                        </li>
+                    </ul>
+                    <div id="download_cv_btn_wrapper">
+                        <button class="button-theme" role="button">Download CV</button>
+                    </div>
+                    <div id="connect_with_me_wrapper">
+                        <h6>Connect with me</h6>
+                        <ul>
+                            <li>
+                                <a href="#"><i class="fab fa-facebook-f icon"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitter icon"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="image_container">
-                    <img src="{% static 'images/self.jpg' %}" class="self_image">
+            <div class="col-md-6">
+                <div id="self_image_container">
+                    <img src="{% static 'images/self-removebg.png' %}">
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 
-<!-- About Section -->
 <section id="about">
+
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="heading">
-                    About Me
+            <div class="col-md-6">
+                <div id="about_me_img_wrapper">
+                    <img src="{% static 'images/about_me.jpg' %}">
                 </div>
-                <div class="about_description_container">
-                    To obtain a position that will allow me to utilize my technical skills and experience 🤌.
-                    I wanted to earn a job which provides me job satisfaction 🤤 and self-development
-                    and help me achieve personal as well as organisational goals 😜.
+            </div>
+            <div class="col-md-6">
+                <div id="about_container_wrapper">
+                    <div class="content">
+                        <h4>My name is Parth Desai</h4>
+                        <div id="fancy_I_wrapper">
+                            <div id="letter_I">
+                                <div class="line"></div>
+                            </div>
+                            <ul>
+                                <li>am graduate of computer science engineering</li>
+                                <li>am self-taught engineer</li>
+                                <li>am skilled in several technologies</li>
+                                <li>am expert in Python language</li>
+                                <li>can be called a full-stack web developer</li>
+                                <li>am able to automate things</li>
+                                <li>'ve been a freelancer</li>
+                                <li>am living in Ahmedabad city of Gujarat State in India</li>
+                                <li>am an employee of organization and been working as python developer since January,
+                                    2022</li>
+                                <li>like to contribute to the community; like pushing code to github or answering in
+                                    stackoverflow are too often for me</li>
+                                <li>have been providing services since I started freelancing, to see more info about
+                                    services I provide
+                                    <a href="#">click here</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 
-<!-- Skills Section -->
 <section id="skills">
+
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="heading">
-                    Skills
+            <div class="col-md-2">
+                <div id="skills_heading">
+                    <span>S</span>
+                    <span>K</span>
+                    <span>I</span>
+                    <span>L</span>
+                    <span>L</span>
+                    <span>S</span>
                 </div>
-                <div class="container-fluid skills_container">
-                    <div class="row">
-
+            </div>
+            <div class="col-md-10">
+                <div id="skills_container_wrapper">
+                    <ul>
                         {% for skill in skills %}
-                        <div class="col-md-3 skill_box">
-                            <div class="skill_logo">
+                        <li>
+                            <div id="skill_image_wrapper">
                                 <img src="{{ skill.logo.url }}">
                             </div>
-                            <div class="skill_name">
-                                <span class="skill_text">{{ skill.name|title }}</span>
-                            </div>
-                        </div>
+                            <span>
+                                {{ skill.name|title }}
+                            </span>
+                        </li>
                         {% endfor %}
 
-                    </div>
+                    </ul>
                 </div>
             </div>
+
         </div>
     </div>
+
 </section>
 
+<section id="projects">
 
-<!-- Work  -->
-<section id="works">
+    <h2 class="heading">Projects</h2>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="heading">
-                    Projects
-                </div>
-            </div>
-        </div>
-        <div class="row">
 
-            {% for project in projects|slice:"8" %}
-            <div class="col-md-3 d-flex align-items-stretch">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Project Image">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ project.title|title }}</h5>
-                      <p class="card-text">{{ project.description }}</p>
-                      <a href="{{ project.link }}" target="_blank" class="btn btn-primary">View Project</a>
-                    </div>
+            {% for project in projects|slice:"4" %}
+            <div class="projects_container_wrapper shadow-large">
+                <div class="project-image">
+                    <img src="{{ project.image.url }}">
+                </div>
+
+                <div class="project-info">
+                    <h3>{{ project.title|title }}</h3>
+                    <p>
+                        {{ project.description }}
+                    </p>
+                    <a href="{{ project.link }}" target="_blank">View Project</a>
                 </div>
             </div>
             {% endfor %}
-
-            <div class="col-md-12 text-center">
-                <a href="{% url 'project_list' %}" class="btn btn-primary">View All Projects</a>
-            </div>
             
+            <div class="view_all_btn_wrapper">
+                <a class="button-theme">Show All</a>
+            </div>
+
         </div>
     </div>
+
 </section>
 
-<!-- Blogs  -->
+
 <section id="blogs">
     <div class="container">
+        <div class="row heading">
+            <h2>Blogs</h2>
+        </div>
         <div class="row">
-            <div class="col-6">
-                <h3 class="mb-3">Blogs</h3>
-            </div>
-            <div class="col-6 text-right">
-                <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                    <i class="fa fa-arrow-left"></i>
-                </a>
-                <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                    <i class="fa fa-arrow-right"></i>
-                </a>
-            </div>
-            <div class="col-12">
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+            <div id="blogs_container_wrapper">
 
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
+                <ul class="blog-posts-list">
+                    {% for blog in blogs|slice:"3" %}
+                    <li class="blog-post-item">
+                        <a href="{% url 'blog_detail' blog_id=blog.id %}">
+                            <figure class="blog-banner-box">
+                                <img src="{{ blog.image.url }}" alt="" loading="lazy">
+                            </figure>
 
-                                {% for blog in blogs|slice:"3" %}
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="100%x280" src="{{ blog.image.url }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">{{ blog.title|title }}</h4>
-                                            <p class="card-text">{{ blog.description }}</p>
-                                            <a href="{% url 'blog_detail' blog_id=blog.id %}" class="btn btn-primary">View</a>
-                                        </div>
-                                    </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <time datetime="2022-02-23">Fab 23, 2022</time>
                                 </div>
-                                {% endfor %}
 
+                                <h3 class="h3 blog-item-title">{{ blog.title|title }}</h3>
+
+                                <p class="blog-text">
+                                    {{ blog.description }}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="view_all_btn_wrapper">
+                    <a class="button-theme">Show All</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="contact-content">
+                    <h1>Contact</h1>
+                    <p>Let's make something new, different and more meaningful or make thing more visual or
+                        conceptual?</p>
+                    <div class="contact-group">
+                        <div class="contact-item">
+                            <div class="icon-container">
+                                <i class="fas fa-phone-square-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p>Call Me</p>
+                                <p>+91 81419 93590</p>
                             </div>
                         </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-
-                                {% for blog in blogs|slice:"3:6" %}
-                                <div class="col-md-4 mb-3">
-                                    <div class="card">
-                                        <img class="img-fluid" alt="{{ blog.title }} Image" src="{{ blog.image.url }}">
-                                        <div class="card-body">
-                                            <h4 class="card-title">{{ blog.title|title }}</h4>
-                                            <p class="card-text">{{ blog.description }}</p>
-                                            <a href="{% url 'blog_detail' blog_id=blog.id %}" class="btn btn-primary">View</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
-
+                        <div class="contact-item">
+                            <div class="icon-container">
+                                <i class="far fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p>Email</p>
+                                <p>desaiparth971@gmail.com</p>
                             </div>
                         </div>
-
-
+                        <div class="contact-item">
+                            <div class="icon-container">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p>Address</p>
+                                <p>Gujarat, India</p>
+                            </div>
+                        </div>
+                        <p>Find Me on</p>
+                        <div class="link-icons-group">
+                            <div class="link-icon-container">
+                                <a href="https://github.com/Parth971" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/parth-desai-31b627169/" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="http://parthdesai.in/" target="_blank">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                                <a href="https://www.instagram.com/desaiparth_2000/" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="https://www.upwork.com/freelancers/~011b51adb453c07b00" target="_blank">
+                                    <i class="fab">
+                                        <svg role="img" viewBox="0 0 24 24">
+                                            <path
+                                                d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z">
+                                            </path>
+                                        </svg>
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 text-center">
-                <a href="{% url 'blog_list' %}" class="btn btn-primary">View All Blogs</a>
+            <div class="col-md-7">
+                <div class="contact-form">
+                    <h1>Drop a Line</h1>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-margin-top">
+                                    <input type="text" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-margin-top">
+                                    <input type="text" placeholder="Phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="Email">
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea name="txtarea" id="" cols="30" rows="10" placeholder="Message"
+                                    class="textarea-margin"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button type="submit" class="button-theme submit-btn">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <hr>
+                    <p>Copyright &copy; 2023 Parth Desai. All Rights Reserved.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-
-<section id="contact" class="footer">
-    <div class="container">
-         <div class="row">
-              <div class="col-md-5">
-                   <div class="contact-content">
-                        <h1>Contact</h1>
-                        <p>Let's make something new, different and more meaningful or make thing more visual or
-                             conceptual?</p>
-                        <div class="contact-group">
-                             <div class="contact-item">
-                                  <div class="icon-container">
-                                       <i class="fas fa-phone-square-alt"></i>
-                                  </div>
-                                  <div class="contact-details">
-                                       <p>Call Me</p>
-                                       <p>+91 81419 93590</p>
-                                  </div>
-                             </div>
-                             <div class="contact-item">
-                                  <div class="icon-container">
-                                       <i class="far fa-envelope"></i>
-                                  </div>
-                                  <div class="contact-details">
-                                       <p>Email</p>
-                                       <p>desaiparth971@gmail.com</p>
-                                  </div>
-                             </div>
-                             <div class="contact-item">
-                                  <div class="icon-container">
-                                       <i class="fas fa-map-marker-alt"></i>
-                                  </div>
-                                  <div class="contact-details">
-                                       <p>Address</p>
-                                       <p>Ahmedabad, Gujarat - 382345 <br> India</p>
-                                  </div>
-                             </div>
-                             <p>Find Me on</p>
-                             <div class="link-icons-group">
-                                  <div class="link-icon-container">
-                                      <a href="https://github.com/Parth971" target="_blank">
-                                          <i class="fab fa-github"></i>
-                                      </a>
-                                      <a href="https://www.linkedin.com/in/parth-desai-31b627169/" target="_blank">
-                                          <i class="fab fa-linkedin-in"></i>
-                                      </a>
-                                      <a href="http://parthdesai.in/" target="_blank">
-                                          <i class="fab fa-dribbble"></i>
-                                      </a>
-                                      <a href="https://www.instagram.com/desaiparth_2000/" target="_blank">
-                                          <i class="fab fa-instagram"></i>
-                                      </a>
-                                      <a href="https://www.upwork.com/freelancers/~011b51adb453c07b00" target="_blank">
-                                          <i class="fab" style="width:40px">
-                                                <svg style="color: white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Upwork</title><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" fill="white"></path></svg>
-                                          </i>
-                                      </a>
-                                  </div>
-                             </div>
-                        </div>
-                   </div>
-              </div>
-              <div class="col-md-7">
-                   <div class="contact-form">
-                        <h1>Drop a Line</h1>
-                        <form>
-                             <div class="row">
-                                  <div class="col-md-6">
-                                       <div class="input-margin-top">
-                                            <input type="text" placeholder="Name">
-                                       </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                       <div class="input-margin-top">
-                                        <input type="text" placeholder="Phone">
-                                       </div>
-                                  </div>
-                             </div>
-                             <div class="row">
-                                  <div class="col-md-12">
-                                    <input type="text" placeholder="Email">
-                                       
-                                  </div>
-                                  
-                             </div>
-                             <div class="row">
-                                  <div class="col-md-12">
-                                       <textarea name="txtarea" id="" cols="30" rows="10" placeholder="Message"
-                                            class="textarea-margin"></textarea>
-                                  </div>
-                             </div>
-                             <div class="row">
-                                  <div class="col-md-4">
-                                       <button type="submit"
-                                            class="btn btn-theme button-theme-style">Submit</button>
-                                  </div>
-                             </div>
-                        </form>
-                   </div>
-              </div>
-         </div>
-         <div class="row">
-              <div class="col-md-12">
-                   <div class="copyright">
-                        <hr>
-                        <p>Copyright &copy; 2023 Parth Desai. All Rights Reserved.</p>
-                   </div>
-              </div>
-         </div>
-    </div>
-</section>
 
 {% endblock %}
