@@ -35,7 +35,7 @@
                         </li>
                     </ul>
                     <div id="download_cv_btn_wrapper">
-                        <button class="button-theme" role="button">Download CV</button>
+                        <a href="{{ cv_url }}" class="button-theme" download>Download CV</a>
                     </div>
                     <div id="connect_with_me_wrapper">
                         <h6>Connect with me</h6>
@@ -98,7 +98,7 @@
                                     stackoverflow are too often for me</li>
                                 <li>have been providing services since I started freelancing, to see more info about
                                     services I provide
-                                    <a href="#">click here</a>
+                                    <a href="{% url 'services' %}">click here</a>
                                 </li>
                             </ul>
                         </div>
@@ -153,7 +153,7 @@
     <div class="container">
         <div class="row">
 
-            {% for project in projects|slice:"4" %}
+            {% for project in projects %}
             <div class="projects_container_wrapper shadow-large">
                 <div class="project-image">
                     <img src="{{ project.image.url }}">
@@ -168,16 +168,15 @@
                 </div>
             </div>
             {% endfor %}
-            
+
             <div class="view_all_btn_wrapper">
-                <a class="button-theme">Show All</a>
+                <a href="{% url 'project_list' %}" class="button-theme">Show All</a>
             </div>
 
         </div>
     </div>
 
 </section>
-
 
 <section id="blogs">
     <div class="container">
@@ -188,7 +187,7 @@
             <div id="blogs_container_wrapper">
 
                 <ul class="blog-posts-list">
-                    {% for blog in blogs|slice:"3" %}
+                    {% for blog in blogs %}
                     <li class="blog-post-item">
                         <a href="{% url 'blog_detail' blog_id=blog.id %}">
                             <figure class="blog-banner-box">
@@ -211,7 +210,7 @@
                     {% endfor %}
                 </ul>
                 <div class="view_all_btn_wrapper">
-                    <a class="button-theme">Show All</a>
+                    <a href="{% url 'blog_list' %}" class="button-theme">Show All</a>
                 </div>
             </div>
 
@@ -265,11 +264,18 @@
                                 <a href="https://www.linkedin.com/in/parth-desai-31b627169/" target="_blank">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="http://parthdesai.in/" target="_blank">
-                                    <i class="fab fa-dribbble"></i>
-                                </a>
                                 <a href="https://www.instagram.com/desaiparth_2000/" target="_blank">
                                     <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="http://parthdesai.in/" target="_blank">
+                                    <i class="fab">
+                                        <svg viewBox="0 0 115 100">
+                                            <path class="cls-1"
+                                                d="M72.19,0l8.37,11.74L122.88,0Zm-44,91.38L51.08,69,37.3,54.19,28.18,91.38ZM68.7,0,56.46,11l20.59.77L68.7,0ZM21.11,0l4.42,9,24.23,1.51L21.11,0Zm13,46.73L52,13.33,0,10.52,34.09,46.73Zm2.08,2.11L53.08,67,71.73,48.72l5.79-34L54.79,13.51,36.17,48.84Zm0,0Z">
+
+                                            </path>
+                                        </svg>
+                                    </i>
                                 </a>
                                 <a href="https://www.upwork.com/freelancers/~011b51adb453c07b00" target="_blank">
                                     <i class="fab">

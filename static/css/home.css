@@ -33,6 +33,12 @@
 
 #download_cv_btn_wrapper {
 	margin: 80px 100px;
+	text-align: center;
+}
+
+#download_cv_btn_wrapper > a {
+	padding-left: 100px;
+	padding-right: 100px;
 }
 
 #connect_with_me_wrapper {
