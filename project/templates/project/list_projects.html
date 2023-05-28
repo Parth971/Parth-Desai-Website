@@ -2,7 +2,10 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_common.css' %}">
+<link rel="stylesheet" href="{% static 'css/project.css' %}">
+<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+<link rel="stylesheet" href="{% static 'css/navigation.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -24,17 +27,61 @@
         </div>
         <div class="row">
             {% for project in projects %}
-            <div class="col-md-3 d-flex align-items-stretch">
+            <div class="col-md-3 d-flex align-items-stretch card-item">
                 <div class="card" style="width: 18rem;">
                     <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }} Project Image">
                     <div class="card-body">
                       <h5 class="card-title">{{ project.title|title }}</h5>
-                      <p class="card-text">{{ project.description }}</p>
+                      <p class="card-text">{{ project.description|truncatechars:100 }}</p>
                       <a href="{{ project.link }}" target="_blank" class="btn btn-primary">View Project</a>
                     </div>
                 </div>
             </div>
             {% endfor %}
+
+            <div id="pagination">
+                {% if page_obj|length > 0 %}
+                    <div class="my-4">
+                        {% if page_obj.has_previous %}
+                            <a class="btn button-theme btn-sm page_number_link"
+                                href="{{ page_obj.previous_page_number }}">
+                                Previous Page
+                            </a>
+                        {% else %}
+                            <a class="btn button-theme btn-sm disabled">
+                                Previous Page
+                            </a>
+                        {% endif %}
+
+                        {% for page_number in page_obj.adjusted_elided_pages %}
+                            {% if page_number == page_obj.paginator.ELLIPSIS %}
+                                {{ page_number }}
+                            {% else %}
+                                <a class="page_number_link"
+                                    href="{{ page_number }}">
+
+                                    {% if page_number == page_obj.number %}
+                                        <span class="btn btn-sm selected">{{ page_number }}</span>
+                                    {% else %}
+                                        <span class="btn btn-sm">{{ page_number }}</span>
+                                    {% endif %}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <a class="btn button-theme btn-sm page_number_link"
+                                href="{{ page_obj.next_page_number }}">
+                                Next Page
+                            </a>
+                        {% else %}
+                            <a class="btn button-theme btn-sm disabled">
+                                Next Page
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
 
         </div>
     </div>
@@ -42,3 +89,30 @@
 
 
 {% endblock %}
+
+
+{% block js %}
+<script>
+    $(function () {
+        let navItem = $('.nav-item .nav-link');
+        for (let i=0; i < navItem.length; i++) {
+            $(navItem[i]).removeClass('active');
+        }
+        $($('.nav-link')[3]).addClass('active');
+
+        let mainQueryParams = new URLSearchParams();
+        
+        let page_number_links = $('.page_number_link');
+        if(page_number_links.length) {
+            for (let i=0; i<page_number_links.length; i++) {
+                let queryParams = mainQueryParams
+                queryParams.set("page", $(page_number_links[i]).attr('href'));
+                let next_url = location.protocol + '//' + location.host + location.pathname + "?" + queryParams.toString()
+                $(page_number_links[i]).attr('href', next_url);
+            }
+        }
+    })
+
+</script>
+{% endblock %}
+

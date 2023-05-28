@@ -130,3 +130,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+PAGINATION_CONFIGURATIONS = {
+    'PAGINATE_BY': 5,
+    'GET_ELIDED_PAGE_RANGE_ON_EACH_SIDE': 1,
+    'GET_ELIDED_PAGE_RANGE_ON_ENDS': 2
+}

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     let navItem = $('.nav-item .nav-link');
-    console.log(navItem);
+
     navItem.on('click', (event) => {
         let target = $(event.currentTarget);
         

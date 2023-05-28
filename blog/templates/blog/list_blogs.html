@@ -2,114 +2,20 @@
 {% load static %}
 
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+    <link rel="stylesheet" href="{% static 'css/list_blogs.css' %}">
 {% endblock %}
 
 {% block body %}
-
-<style>
-
-.blog-container {
-    position: relative;
-    padding-bottom: 40px;
-}
-.eyebrow {
-    font-size: .9rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #225556;
-}
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block;
-}
-.blog-listing {
-    padding: 1rem 0;
-}
-.blog-listing-heading {
-    margin: 0 0 1rem;
-    max-width: 30ch;
-    font-size: 1.65rem;
-    font-weight: 600;
-}
-a {
-    color: #1972d1;
-    text-decoration: none;
-    background-color: transparent;
-}
-.blog-listing-meta {
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-.blog-listing-meta li {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0 2rem 1rem 0;
-}
-.blog-listing-date {
-    font-size: .8rem;
-    opacity: .9;
-}
-.blog-listing-meta li:last-child {
-    margin-right: 0;
-}
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-.topics-list {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    font-size: .9rem;
-}
-.topics-list .topic {
-    margin: 0 0 .2rem .18rem;
-    border-bottom: 1px solid #f1f1f1;
-    font-weight: 700;
-    text-transform: lowercase;
-    color: #797979;
-}
-.btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
-}
-.btn-group-xs>.btn, .btn-xs {
-    padding: .25rem .4rem;
-    border-radius: .2rem;
-    font-size: .775rem;
-    line-height: .9;
-}
-
-
-@media (min-width: 992px)
-.blog-listing-body {
-    max-width: 92%;
-}
-@media (min-width: 992px)
-.blog-listing-heading {
-    font-size: 1.98rem;
-}
-
-</style>
 
 <div class="navigation-bar">
     {% include "nav.html" %}
 </div>
 
 <main>
-   <div class="container blog-container" style="padding-top: 0;">
+   <div class="container blog-container">
       <div class="row">
          <div class="col col-12 col-lg-8">
             <h2 class="eyebrow">Latest Posts</h2>
@@ -130,26 +36,72 @@ p {
                   <div class="blog-listing-body">
                      <p>{{ blog.description }}</p>
                   </div>
+                  {% if blog.categories.all %}
                   <div class="topics-list">
                      <i class="fas fa-tags fa-sm"></i>
 
                      {% for cat in blog.categories.all %}
-                        <a class="btn btn-light btn-xs topic" href="/blog/topics/docker/">
+                        <a class="btn btn-light btn-xs topic" href="#">
                            {{ cat.name }}
                         </a>
                      {% endfor %}
 
                   </div>
+                  {% endif %}
                </article>
             {% endfor %}
+            <div id="pagination">
+                {% if page_obj|length > 0 %}
+                    <div class="my-4">
+                        {% if page_obj.has_previous %}
+                            <a class="btn button-theme btn-sm page_number_link"
+                                href="{{ page_obj.previous_page_number }}">
+                                Previous Page
+                            </a>
+                        {% else %}
+                            <a class="btn button-theme btn-sm disabled">
+                                Previous Page
+                            </a>
+                        {% endif %}
 
+                        {% for page_number in page_obj.adjusted_elided_pages %}
+                            {% if page_number == page_obj.paginator.ELLIPSIS %}
+                                {{ page_number }}
+                            {% else %}
+                                <a class="page_number_link"
+                                    href="{{ page_number }}">
+
+                                    {% if page_number == page_obj.number %}
+                                        <span class="btn btn-sm selected">{{ page_number }}</span>
+                                    {% else %}
+                                        <span class="btn btn-sm">{{ page_number }}</span>
+                                    {% endif %}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <a class="btn button-theme btn-sm page_number_link"
+                                href="{{ page_obj.next_page_number }}">
+                                Next Page
+                            </a>
+                        {% else %}
+                            <a class="btn button-theme btn-sm disabled">
+                                Next Page
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
          </div>
          <div class="col col-12 col-lg-4 blog-sidebar-col">
             <div class="blog-sidebar" data-a-section="Sidebar">
                <aside class="card-sidebar all-topics">
-                  <h3 class="eyebrow">Tutorial Topics</h3>
+                  <h3 class="eyebrow">Categories</h3>
                   <nav class="topics-list">
-                     <a class="btn btn-light btn-xs topic" href="/blog/topics/api/">API</a>
+                        {% for cat in categories %}
+                            <a class="btn btn-light btn-xs topic" href="#">{{ cat.name }}</a>
+                        {% endfor %}
                   </nav>
                </aside>
             </div>
@@ -159,4 +111,29 @@ p {
 </main>
 
 
+{% endblock %}
+
+{% block js %}
+<script>
+    $(function () {
+        let navItem = $('.nav-item .nav-link');
+        for (let i=0; i < navItem.length; i++) {
+            $(navItem[i]).removeClass('active');
+        }
+        $($('.nav-link')[2]).addClass('active');
+
+        let mainQueryParams = new URLSearchParams();
+        
+        let page_number_links = $('.page_number_link');
+        if(page_number_links.length) {
+            for (let i=0; i<page_number_links.length; i++) {
+                let queryParams = mainQueryParams
+                queryParams.set("page", $(page_number_links[i]).attr('href'));
+                let next_url = location.protocol + '//' + location.host + location.pathname + "?" + queryParams.toString()
+                $(page_number_links[i]).attr('href', next_url);
+            }
+        }
+    })
+
+</script>
 {% endblock %}

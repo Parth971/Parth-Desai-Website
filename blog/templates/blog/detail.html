@@ -1,8 +1,15 @@
 {% include 'base.html' %}
 {% load static %}
 
+
 {% block css %}
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_common.css' %}">
+    <style>
+        #content {
+            padding-top: 140px;
+        }
+    </style>
 {% endblock %}
 
 {% block body %}
@@ -12,6 +19,9 @@
     {% include "nav.html" %}
 </div>
 
-{{ blog.body|safe }}
+<div id="content">
+    {{ blog.body|safe }}
+</div>
+
 
 {% endblock %}

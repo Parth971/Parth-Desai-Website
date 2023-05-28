@@ -1,0 +1,30 @@
+#works {
+    padding: 140px 50px;
+}
+
+#works .heading {
+    font-size: 2em;
+	font-weight: 300;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.card-item {
+    margin-top: 20px;
+}
+
+.card-item img {
+    width: 290px;
+    height: 180px;
+}
+
+.card {
+    position: relative;
+    padding-bottom: 50px;
+}
+.card a {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%)
+}

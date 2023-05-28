@@ -1,6 +1,8 @@
 from django.views.generic import DetailView, ListView
 
-from blog.models import Post
+from blog.models import Post, Category
+from core.mixins import PaginationMixin
+from core.utils import CustomPaginator
 
 
 class BlogDetailView(DetailView):
@@ -10,7 +12,15 @@ class BlogDetailView(DetailView):
     pk_url_kwarg = 'blog_id'
 
 
-class BlogListView(ListView):
+class BlogListView(PaginationMixin, ListView):
     template_name = 'blog/list_blogs.html'
     context_object_name = 'blogs'
     model = Post
+    ordering = ['-id']
+    paginator_class = CustomPaginator
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogListView, self).get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
+

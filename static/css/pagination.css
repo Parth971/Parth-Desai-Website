@@ -1,0 +1,25 @@
+
+
+#pagination {
+    user-select: none;
+}
+#pagination a {
+    text-decoration: none;
+}
+
+#pagination a.button-theme {
+    padding: 8px 15px;
+}
+.page_number_link span {
+    border: 1px solid black;
+    color: black;
+    background: white;
+    margin-left: 5px;
+}
+.page_number_link:hover span{
+    background: rgb(104, 245, 255) !important;
+}
+.page_number_link span.selected {
+    background: rgb(104, 245, 255) !important;
+}
+
