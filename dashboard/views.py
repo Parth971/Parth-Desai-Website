@@ -1,6 +1,10 @@
+import json
+
+from django.http import HttpResponse
 from django.views.generic import TemplateView
 
 from blog.models import Post
+from dashboard.forms import ContactForm
 from dashboard.models import Skill
 from project.models import Project
 
@@ -25,6 +29,17 @@ class HomeView(TemplateView):
         context['cv_url'] = self.request.build_absolute_uri('/media/dashboard/CV2023.pdf')
 
         return context
+
+    def post(self, request):
+        print(request.POST)
+        form = ContactForm(data=request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return HttpResponse(status=200, content_type="application/json")
+
+        errors = json.loads(form.errors.as_json())
+        key, value = errors.popitem()
+        return HttpResponse(value[0]['message'].replace('This', key.title()), status=400, content_type="application/json")
 
 
 class ServicesView(TemplateView):

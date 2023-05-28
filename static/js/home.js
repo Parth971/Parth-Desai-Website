@@ -28,5 +28,42 @@ $(function() {
     else {
       $($('.nav-link')[0]).addClass('active');
     }
+
+
+
+    $('#contact-form').on('submit', function(event){
+      event.preventDefault();
+      let csrfmiddlewaretoken = $("input[name*='csrfmiddlewaretoken']").val();
+      
+      console.log("form submitted!");
+      
+      $.ajax({
+        url : "/",
+        type : "POST",
+        data : { 
+          name : $('#contact_name').val(),
+          phone : $('#contact_phone').val(),
+          email : $('#contact_email').val(),
+          message : $('#contact_message').val(),
+          csrfmiddlewaretoken: csrfmiddlewaretoken
+        },
+        success : function(json) {
+            $('#contact_name').val('');
+            $('#contact_phone').val('');
+            $('#contact_email').val('');
+            $('#contact_message').val(''); 
+            console.log(json);
+            console.log("success");
+        },
+
+        // handle a non-successful response
+        error : function(xhr, errmsg, err) {
+            $('#results').html(`<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: ${xhr.responseText} <a onclick="$('#results').html('');" class='close'>&times;</a></div>`); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+        }
+      });
+  });
+
+  
     
 });

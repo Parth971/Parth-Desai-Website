@@ -295,30 +295,34 @@
             <div class="col-md-7">
                 <div class="contact-form">
                     <h1>Drop a Line</h1>
-                    <form>
+                    <form id="contact-form" action="{% url 'home' %}" method="POST">
+                        <div class="row">
+                            <div class="col-md-12" id="results"></div>
+                        </div>
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-margin-top">
-                                    <input type="text" placeholder="Name">
+                                    <input type="text" placeholder="Name" id="contact_name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-margin-top">
-                                    <input type="text" placeholder="Phone">
+                                    <input type="text" placeholder="Phone" id="contact_phone">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="text" placeholder="Email">
+                                <input type="email" placeholder="Email" id="contact_email">
 
                             </div>
 
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <textarea name="txtarea" id="" cols="30" rows="10" placeholder="Message"
-                                    class="textarea-margin"></textarea>
+                                <textarea name="txtarea" cols="30" rows="10" placeholder="Message"
+                                    class="textarea-margin" id="contact_message"></textarea>
                             </div>
                         </div>
                         <div class="row">

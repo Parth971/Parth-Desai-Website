@@ -745,3 +745,14 @@
 	background-color: white;
 	box-shadow: rgba(255, 255, 255, 0.388) 0 8px 15px;
 }
+
+.alert {
+	margin-bottom: 0;
+	background: orange;
+}
+
+.close {
+	cursor: pointer;
+	text-decoration: none;
+	float: right;
+}
