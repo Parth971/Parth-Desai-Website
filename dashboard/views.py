@@ -12,18 +12,18 @@ class HomeView(TemplateView):
         context = super(HomeView, self).get_context_data(**kwargs)
         context['skills'] = Skill.objects.all()
         context['projects'] = Project.objects.all()[:4]
-        context['blogs'] = Post.objects.all()[:3]
+        context['blogs'] = Post.objects.order_by('created_at')[:3]
         context['social_media'] = {
-            'facebook': '',
-            'twiter': '',
-            'linkedin': '',
-            'google': '',
-            'github': '',
-            'instagram': '',
-            'upwork': '',
-            'freelancer': '',
+            'facebook': 'https://www.facebook.com/profile.php?id=100009073984667',
+            'twitter': 'https://twitter.com/desaiparth971/',
+            'linkedin': 'https://www.linkedin.com/in/parth971/',
+            'github': 'https://github.com/Parth971/',
+            'instagram': 'https://www.instagram.com/desaiparth_2000/',
+            'upwork': 'https://www.upwork.com/freelancers/~011b51adb453c07b00/',
+            'freelancer': 'https://www.freelancer.com/u/desaiparth971/',
         }
         context['cv_url'] = self.request.build_absolute_uri('/media/dashboard/CV2023.pdf')
+
         return context
 
 

@@ -10,6 +10,7 @@
 
 {% block js %}
 <script src="{% static 'js/home.js' %}"></script>
+<script src="{% static 'js/nav.js' %}"></script>
 {% endblock js %}
 
 {% block body %}
@@ -41,16 +42,16 @@
                         <h6>Connect with me</h6>
                         <ul>
                             <li>
-                                <a href="#"><i class="fab fa-facebook-f icon"></i></a>
+                                <a href="{{ social_media.facebook }}" target="_blank"><i class="fab fa-facebook-f icon"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-twitter icon"></i></a>
+                                <a href="{{ social_media.twitter }}" target="_blank"><i class="fab fa-twitter icon"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-linkedin-in icon"></i></a>
+                                <a href="{{ social_media.linkedin }}" target="_blank"><i class="fab fa-linkedin-in icon"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="fab fa-google-plus-g icon"></i></a>
+                                <a href="{{ social_media.github }}" target="_blank"><i class="fab fa-github icon"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -96,9 +97,7 @@
                                     2022</li>
                                 <li>like to contribute to the community; like pushing code to github or answering in
                                     stackoverflow are too often for me</li>
-                                <li>have been providing services since I started freelancing, to see more info about
-                                    services I provide
-                                    <a href="{% url 'services' %}">click here</a>
+                                <li>have been providing services since I started freelancing
                                 </li>
                             </ul>
                         </div>
@@ -129,12 +128,14 @@
                     <ul>
                         {% for skill in skills %}
                         <li>
-                            <div id="skill_image_wrapper">
-                                <img src="{{ skill.logo.url }}">
-                            </div>
-                            <span>
-                                {{ skill.name|title }}
-                            </span>
+                            <a href="{{ skill.link }}">
+                                <div id="skill_image_wrapper">
+                                    <img src="{{ skill.logo.url }}">
+                                </div>
+                                <span>
+                                    {{ skill.name|title }}
+                                </span>
+                            </a>
                         </li>
                         {% endfor %}
 
@@ -199,10 +200,10 @@
                                     <time datetime="2022-02-23">Fab 23, 2022</time>
                                 </div>
 
-                                <h3 class="h3 blog-item-title">{{ blog.title|title }}</h3>
+                                <h3 class="h3 blog-item-title">{{ blog.title|title|truncatechars:20 }}</h3>
 
                                 <p class="blog-text">
-                                    {{ blog.description }}
+                                    {{ blog.description|truncatechars:120 }}
                                 </p>
                             </div>
                         </a>
@@ -258,16 +259,16 @@
                         <p>Find Me on</p>
                         <div class="link-icons-group">
                             <div class="link-icon-container">
-                                <a href="https://github.com/Parth971" target="_blank">
+                                <a href="{{ social_media.github }}" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://www.linkedin.com/in/parth-desai-31b627169/" target="_blank">
+                                <a href="{{ social_media.linkedin }}" target="_blank">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://www.instagram.com/desaiparth_2000/" target="_blank">
+                                <a href="{{ social_media.instagram }}" target="_blank">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="http://parthdesai.in/" target="_blank">
+                                <a href="{{ social_media.freelancer }}" target="_blank">
                                     <i class="fab">
                                         <svg viewBox="0 0 115 100">
                                             <path class="cls-1"
@@ -277,7 +278,7 @@
                                         </svg>
                                     </i>
                                 </a>
-                                <a href="https://www.upwork.com/freelancers/~011b51adb453c07b00" target="_blank">
+                                <a href="{{ social_media.upwork }}" target="_blank">
                                     <i class="fab">
                                         <svg role="img" viewBox="0 0 24 24">
                                             <path
