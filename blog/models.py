@@ -3,6 +3,8 @@ from django.db import models
 from accounts.models import User
 from blog.utils import upload_post_image
 
+from ckeditor.fields import RichTextField 
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -17,7 +19,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     image = models.ImageField(upload_to=upload_post_image)
-    body = models.TextField()
+    body = RichTextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
