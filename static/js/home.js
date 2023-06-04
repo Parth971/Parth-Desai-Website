@@ -48,18 +48,15 @@ $(function() {
           csrfmiddlewaretoken: csrfmiddlewaretoken
         },
         success : function(json) {
-            $('#contact_name').val('');
-            $('#contact_phone').val('');
-            $('#contact_email').val('');
-            $('#contact_message').val(''); 
-            console.log(json);
-            console.log("success");
+          $('#contact_name').val("");
+          $('#contact_phone').val("");
+          $('#contact_email').val("");
+          $('#contact_message').val("");
+          $('#results').html(`<div class='alert-box alert success-alert radius' data-alert>Submitted succesfully<a onclick="$('#results').html('');" class='close'>&times;</a></div>`);
         },
-
-        // handle a non-successful response
         error : function(xhr, errmsg, err) {
-            $('#results').html(`<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: ${xhr.responseText} <a onclick="$('#results').html('');" class='close'>&times;</a></div>`); // add the error to the dom
-            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+            $('#results').html(`<div class='alert-box alert failed-alert radius' data-alert>Oops! We have encountered an error: ${xhr.responseText} <a onclick="$('#results').html('');" class='close'>&times;</a></div>`);
+            console.log(xhr.status + ": " + xhr.responseText);
         }
       });
   });

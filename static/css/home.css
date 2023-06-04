@@ -744,8 +744,15 @@
 }
 
 .alert {
-	margin-bottom: 0;
+	margin-bottom: 10px;
+}
+
+.failed-alert {
 	background: orange;
+}
+
+.success-alert {
+	background: rgb(69 195 58);
 }
 
 .close {

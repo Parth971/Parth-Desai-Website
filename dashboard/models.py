@@ -8,6 +8,10 @@ class Skill(models.Model):
     logo = models.ImageField(upload_to=upload_skill_logo)
     link = models.TextField()
 
+    def __str__(self):
+        return self.name
+    
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=255)
@@ -15,3 +19,7 @@ class Contact(models.Model):
     email = models.EmailField(max_length=255)
     message = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.email}"
+    

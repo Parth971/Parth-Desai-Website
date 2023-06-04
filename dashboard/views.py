@@ -31,11 +31,10 @@ class HomeView(TemplateView):
         return context
 
     def post(self, request):
-        print(request.POST)
         form = ContactForm(data=request.POST)
         if form.is_valid():
             form.save(commit=True)
-            return HttpResponse(status=200, content_type="application/json")
+            return HttpResponse(status=200)
 
         errors = json.loads(form.errors.as_json())
         key, value = errors.popitem()

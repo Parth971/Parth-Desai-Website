@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from dashboard.models import Skill
+from dashboard.models import Skill, Contact
 
-admin.site.register([Skill])
+admin.site.register([Skill, Contact])
