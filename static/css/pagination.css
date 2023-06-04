@@ -23,3 +23,20 @@
     background: rgb(104, 245, 255) !important;
 }
 
+
+
+@media (max-width: 576px) {
+    #pagination a.btn {
+        display: inline-block;
+    }
+    #pagination .button-theme{
+        min-height: 42px
+    }
+    #pagination .my-4 {
+        text-align: center;
+    }
+    #pagination a.page_number_link span {
+        margin: 10px auto;
+    }
+}
+

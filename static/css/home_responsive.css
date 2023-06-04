@@ -124,7 +124,11 @@
     }
 
     /* Contact */
-    .contact-group>p {
+    .contact-form {
+        margin-top: 50px;
+    }
+
+    .contact-group > p {
         text-align: center;
         margin-top: 50px;
         font-size: 18px;

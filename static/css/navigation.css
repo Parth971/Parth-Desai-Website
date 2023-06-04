@@ -50,3 +50,14 @@
     background-color: #fff;
     color: #000;
 }
+
+#navbarSupportedContent .d-flex{
+    justify-content: center
+}
+
+@media (max-width: 768px) {
+
+    .nav-item {
+        text-align: center;
+    }
+}

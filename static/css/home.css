@@ -200,7 +200,7 @@
 
 #fancy_I_wrapper ul li {
 	padding: 4px 10px;
-	list-style: none;
+	list-style: square;
 	font-size: 18px;
 	color: rgba(49, 49, 49, 0.664);
 }
@@ -675,6 +675,7 @@
 
 .contact-form h1 {
 	font-weight: 600;
+	margin-bottom: 30px;
 }
 
 .contact-form input,
@@ -689,10 +690,6 @@
 	background-color: #333647;
 	border: 0;
 	color: white;
-}
-
-.input-margin-top {
-	margin-top: 20px;
 }
 
 .contact-form select {
