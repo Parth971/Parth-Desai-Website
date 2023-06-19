@@ -3,6 +3,18 @@ section#content {
     padding-bottom: 40px;
     position: relative;
     font-family: "sans-serif";
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.back-btn-wrapper {
+    float: left;
+    margin: 50px;
 }
 
 #content-wraper {
@@ -16,12 +28,6 @@ section#content {
     color: #222;
     letter-spacing: 1px;
     text-transform: uppercase;
-
-    display: grid;
-    grid-template-columns: 1fr max-content 1fr;
-    grid-template-rows: 27px 0;
-    grid-gap: 20px;
-    align-items: center;
 }
 
 .main-heading h1:after,
@@ -199,4 +205,12 @@ pre[class*="language-"] > code .token {
     margin: 0;
     padding: 0;
     text-shadow: none;
+}
+
+
+
+@media (max-width: 768px) {
+    .iw img {
+        transform: scale(0.5);
+    }
 }

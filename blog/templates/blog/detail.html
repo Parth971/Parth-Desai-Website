@@ -13,7 +13,7 @@
     {% include "nav.html" %}
 </div>
 
-<section id="content">
+<section id="content" class="clearfix">
     {{ blog.body|safe }}
 </section>
 
@@ -24,7 +24,7 @@
 <script>
     $(function () {
         let pageTitle = $('head title');
-        pageTitle.html('Blog | {{ blog.title|title }}')
+        pageTitle.html('Blog | {{ blog.title|title }}');
     })
 </script>
 {% endblock %}
