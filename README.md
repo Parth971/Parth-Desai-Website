@@ -70,10 +70,10 @@ To run using GUNICORN
 
 To save db data into json files
 
-    python manage.py dumpdata dashboard.Skill dashboard.Contact > dashboard.json
+    python manage.py dumpdata dashboard.Skill dashboard.Contact > dbdump/dashboard.json
     
-    python manage.py dumpdata blog.Category blog.Post blog.Comment > blog.json
+    python manage.py dumpdata blog.Category blog.Post blog.Comment > dbdump/blog.json
     
-    python manage.py dumpdata accounts.User > accounts.json
+    python manage.py dumpdata accounts.User > dbdump/accounts.json
     
-    python manage.py dumpdata project.Project > project.json
+    python manage.py dumpdata project.Project > dbdump/project.json
