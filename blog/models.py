@@ -1,7 +1,7 @@
 from django.db import models
 
 from accounts.models import User
-from blog.utils import upload_post_image
+from blog.utils import upload_post_image, upload_blog_meta_data_image
 
 from ckeditor.fields import RichTextField 
 
@@ -36,3 +36,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class BlogMetaData(models.Model):
+    image = models.ImageField(upload_to=upload_blog_meta_data_image)
