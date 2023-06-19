@@ -211,6 +211,75 @@ pre[class*="language-"] > code .token {
 
 @media (max-width: 768px) {
     .iw img {
-        transform: scale(0.5);
+        width: 100%
     }
+
+    #content-wraper {
+        margin: 5px;
+    }
+
+    .indent {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .iw img {
+        width: 100%
+    }
+
+    #content-wraper {
+        margin: 0px;
+    }
+
+    .indent {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .heading1 {
+        padding: 5px 5px;
+        font-size: 25px;
+    }
+    .content .block {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .nt {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+    
+    .contains-heading > li {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    .explaination .block {
+        padding: 5px;
+        margin: 0;
+    }
+
+    .note {
+        margin-top: 10px;
+        font-size: 15px;
+    }
+
+    .note a {
+        word-break: break-all;
+    }
+
+    span.mark {
+        border-radius: 5px;
+        padding: 1px 5px;
+    }
+
+    .divider {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
 }
