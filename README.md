@@ -67,3 +67,13 @@ To run Local Development Server, run below cmd
 To run using GUNICORN
 
     gunicorn core.wsgi:application --bind 0.0.0.0:8000 --timeout 600 --daemon
+
+To save db data into json files
+
+    python manage.py dumpdata dashboard.Skill dashboard.Contact > dashboard.json
+    
+    python manage.py dumpdata blog.Category blog.Post blog.Comment > blog.json
+    
+    python manage.py dumpdata accounts.User > accounts.json
+    
+    python manage.py dumpdata project.Project > project.json
