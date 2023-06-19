@@ -1,24 +1,30 @@
 {% include 'base.html' %}
+{% load static %}
 
 {% block css %}
-    <style>
-        
-    </style>
+<link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_common.css' %}">
+<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+<link rel="stylesheet" href="{% static 'css/detail_blog.css' %}">
 {% endblock %}
 
 {% block body %}
+<div class="navigation-bar">
+    {% include "nav.html" %}
+</div>
 
-
-{{ blog.body|safe }}
+<section id="content">
+    {{ blog.body|safe }}
+</section>
 
 
 {% endblock %}
 
 {% block js %}
-    <script>
-        $(document).ready(function () {
-            let navItem = $('head title');
-            navItem.html('Blog | {{ blog.title|title }}')
-        });
-    </script>
+<script>
+    $(function () {
+        let pageTitle = $('head title');
+        pageTitle.html('Blog | {{ blog.title|title }}')
+    })
+</script>
 {% endblock %}

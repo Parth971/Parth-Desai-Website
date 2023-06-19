@@ -1,0 +1,202 @@
+section#content {
+    padding-top: 120px;
+    padding-bottom: 40px;
+    position: relative;
+    font-family: "sans-serif";
+}
+
+#content-wraper {
+    margin: 50px;
+}
+
+.main-heading h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.main-heading h1:after,
+.main-heading h1:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #369f00;
+    border-top: 1px solid #369f00;
+    height: 5px;
+    background-color: #f8f8f8;
+}
+
+.indent {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.content .block {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.content .block {
+    background-color: rgba(240, 240, 240, 0.35);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.heading1 {
+    font-size: 28px;
+    padding: 10px 20px;
+    font-weight: 400;
+    color: #255e21;
+}
+
+.heading1::after {
+    content: "";
+    display: block;
+    border: 1px solid #2b7e007a;
+    height: 1px;
+}
+
+.contains-heading > li {
+    font-size: 20px;
+    padding: 5px 0;
+    font-weight: 400;
+}
+
+.explaination {
+    box-shadow: 0 0 15px 0 #2b7e007a;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.explaination .heading1 {
+    color: black;
+}
+
+.explaination .heading1::after {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.explaination .block {
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.nt {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.iw {
+    text-align: center;
+    margin: 10px 0;
+}
+.iw img {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.note {
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.divider {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+span.mark {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 5px;
+    padding: 3px 10px;
+}
+
+/* Code  */
+.code-toolbar {
+    margin: 1em 0;
+    position: relative;
+    color: #4d5b7c;
+    font-size: 16px;
+}
+
+.code-toolbar > pre.script {
+    white-space: pre;
+}
+
+.code-toolbar > pre {
+    margin: 0;
+    background: #081b4b;
+    color: #fff;
+    border-radius: 16px;
+    display: block;
+    overflow: auto;
+    padding: 1em;
+    white-space: normal;
+    word-wrap: normal;
+    font-size: 14px;
+    line-height: 1.4em;
+}
+
+.code-toolbar code .token {
+    text-shadow: none;
+    background: transparent;
+    white-space: normal;
+    border-radius: 0;
+    color: inherit;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.4em;
+}
+
+pre.prefixed code ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+pre.prefixed code ol li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+pre.prefixed code ol li:before {
+    content: attr(data-prefix);
+    display: inline-block;
+    margin: 0 10px 0 5px;
+    text-align: right;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+pre[class*="language-"] > code .token.attr-value,
+pre[class*="language-"] > code .token.class-name,
+pre[class*="language-"] > code .token.function {
+    color: #ff4084;
+}
+pre[class*="language-"] > code .token {
+    background: none;
+    border-radius: 0;
+    display: inline;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+}
