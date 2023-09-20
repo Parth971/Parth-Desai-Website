@@ -1,4 +1,4 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block css %}
@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{% static 'css/home_common.css' %}">
     <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
     <link rel="stylesheet" href="{% static 'css/list_blogs.css' %}">
-{% endblock %}
+{% endblock css %}
 
 {% block body %}
 
@@ -111,7 +111,7 @@
 </main>
 
 
-{% endblock %}
+{% endblock body %}
 
 {% block js %}
 <script>
@@ -136,4 +136,4 @@
     })
 
 </script>
-{% endblock %}
+{% endblock js %}

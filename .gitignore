@@ -4,7 +4,7 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
+#media
 
 # Backup files #
 *.bak
@@ -150,3 +150,5 @@ GitHub.sublime-settings
 credentials.csv
 *.ppk
 *.pem
+
+staticfiles

@@ -1,328 +1,335 @@
-{% include 'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'css/navigation.css' %}">
-<link rel="stylesheet" href="{% static 'css/home_common.css' %}">
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-<link rel="stylesheet" href="{% static 'css/home_responsive.css' %}">
-{% endblock %}
+    <link rel="stylesheet" href="{% static 'css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_responsive.css' %}">
+{% endblock css %}
 
 {% block js %}
-<script src="{% static 'js/home.js' %}"></script>
-<script src="{% static 'js/nav.js' %}"></script>
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
 {% endblock js %}
 
 {% block body %}
 
-<div class="navigation-bar">
-    {% include "nav.html" %}
-</div>
-
-
-<section id="introduction">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="col-md-6"></div>
-                <div id="introduction_container_wrapper">
-                    <ul>
-                        <li>
-                            I AM A <b>SOFTWARE DEVELOPER</b>
-                        </li>
-                        <li>
-                            <b>PARTH DESAI</b>
-                        </li>
-                    </ul>
-                    <div id="download_cv_btn_wrapper">
-                        <a href="{{ cv_url }}" class="button-theme" download>Download CV</a>
-                    </div>
-                    <div id="connect_with_me_wrapper">
-                        <h6>Connect with me</h6>
-                        <ul>
-                            <li>
-                                <a href="{{ social_media.facebook }}" target="_blank"><i class="fab fa-facebook-f icon"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{ social_media.twitter }}" target="_blank"><i class="fab fa-twitter icon"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{ social_media.linkedin }}" target="_blank"><i class="fab fa-linkedin-in icon"></i></a>
-                            </li>
-                            <li>
-                                <a href="{{ social_media.github }}" target="_blank"><i class="fab fa-github icon"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div id="self_image_container">
-                    <img src="{% static 'images/self-removebg.png' %}">
-                </div>
-            </div>
-        </div>
+    <div class="navigation-bar">
+        {% include "nav.html" %}
     </div>
 
-</section>
 
-<section id="about">
+    <section id="introduction">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div id="about_me_img_wrapper">
-                    <img src="{% static 'images/about_me.jpg' %}">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div id="about_container_wrapper">
-                    <div class="content">
-                        <h4>My name is Parth Desai</h4>
-                        <div id="fancy_I_wrapper">
-                            <div id="letter_I">
-                                <div class="line"></div>
-                            </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-6"></div>
+                    <div id="introduction_container_wrapper">
+                        <ul>
+                            <li>
+                                I AM A <b>SOFTWARE DEVELOPER</b>
+                            </li>
+                            <li>
+                                <b>PARTH DESAI</b>
+                            </li>
+                        </ul>
+                        <div id="download_cv_btn_wrapper">
+                            <a href="{{ cv_url }}" class="button-theme" download>Download CV</a>
+                        </div>
+                        <div id="connect_with_me_wrapper">
+                            <h6>Connect with me</h6>
                             <ul>
-                                <li>am graduate of computer science engineering</li>
-                                <li>am self-taught engineer</li>
-                                <li>am skilled in several technologies</li>
-                                <li>am expert in Python language</li>
-                                <li>can be called a full-stack web developer</li>
-                                <li>am able to automate things</li>
-                                <li>am living in Ahmedabad city of Gujarat State in India</li>
-                                <li>am an employee of organization and been working as python developer since January,
-                                    2022</li>
-                                <li>like to contribute to the community; like pushing code to github or answering in
-                                    stackoverflow are too often for me</li>
+                                <li>
+                                    <a href="{{ social_media.facebook }}" target="_blank"><i
+                                            class="fab fa-facebook-f icon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{ social_media.twitter }}" target="_blank"><i
+                                            class="fab fa-twitter icon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{ social_media.linkedin }}" target="_blank"><i
+                                            class="fab fa-linkedin-in icon"></i></a>
+                                </li>
+                                <li>
+                                    <a href="{{ social_media.github }}" target="_blank"><i
+                                            class="fab fa-github icon"></i></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<section id="skills">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <div id="skills_heading">
-                    <span>S</span>
-                    <span>K</span>
-                    <span>I</span>
-                    <span>L</span>
-                    <span>L</span>
-                    <span>S</span>
+                <div class="col-md-6">
+                    <div id="self_image_container">
+                        <img src="{% static 'images/self-removebg.png' %}">
+                    </div>
                 </div>
             </div>
-            <div class="col-md-10">
-                <div id="skills_container_wrapper">
-                    <ul>
-                        {% for skill in skills %}
-                        <li>
-                            <a href="{{ skill.link }}">
-                                <div id="skill_image_wrapper">
-                                    <img src="{{ skill.logo.url }}">
+        </div>
+
+    </section>
+
+    <section id="about">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="about_me_img_wrapper">
+                        <img src="{% static 'images/about_me.jpg' %}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div id="about_container_wrapper">
+                        <div class="content">
+                            <h4>My name is Parth Desai</h4>
+                            <div id="fancy_I_wrapper">
+                                <div id="letter_I">
+                                    <div class="line"></div>
                                 </div>
-                                <span>
-                                    {{ skill.name|title }}
-                                </span>
-                            </a>
-                        </li>
-                        {% endfor %}
-
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</section>
-
-<section id="projects">
-
-    <h2 class="heading">Projects</h2>
-    <div class="container">
-        <div class="row">
-
-            {% for project in projects %}
-            <div class="projects_container_wrapper shadow-large">
-                <div class="project-image">
-                    <img src="{{ project.image.url }}">
-                </div>
-
-                <div class="project-info">
-                    <h3>{{ project.title|title }}</h3>
-                    <p>
-                        {{ project.description }}
-                    </p>
-                    <a href="{{ project.link }}" target="_blank">View Project</a>
-                </div>
-            </div>
-            {% endfor %}
-
-            <div class="view_all_btn_wrapper">
-                <a href="{% url 'project_list' %}" class="button-theme">Show All</a>
-            </div>
-
-        </div>
-    </div>
-
-</section>
-
-<section id="blogs">
-    <div class="container">
-        <div class="row heading">
-            <h2>Blogs</h2>
-        </div>
-        <div class="row">
-            <div id="blogs_container_wrapper">
-
-                <ul class="blog-posts-list">
-                    {% for blog in blogs %}
-                    <li class="blog-post-item">
-                        <a href="{% url 'blog_detail' blog_id=blog.id %}">
-                            <figure class="blog-banner-box">
-                                <img src="{{ blog.image.url }}" alt="" loading="lazy">
-                            </figure>
-
-                            <div class="blog-content">
-                                <div class="blog-meta">
-                                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                                </div>
-
-                                <h3 class="h3 blog-item-title">{{ blog.title|title|truncatechars:20 }}</h3>
-
-                                <p class="blog-text">
-                                    {{ blog.description|truncatechars:120 }}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <div class="view_all_btn_wrapper">
-                    <a href="{% url 'blog_list' %}" class="button-theme">Show All</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</section>
-
-<section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="contact-content">
-                    <h1>Contact</h1>
-                    <p>Let's make something new, different and more meaningful or make thing more visual or
-                        conceptual?</p>
-                    <div class="contact-group">
-                        <div class="contact-item">
-                            <div class="icon-container">
-                                <i class="fas fa-phone-square-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <p>Call Me</p>
-                                <p>+91 81419 93590</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon-container">
-                                <i class="far fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <p>Email</p>
-                                <p>desaiparth971@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="icon-container">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <p>Address</p>
-                                <p>Gujarat, India</p>
-                            </div>
-                        </div>
-                        <p>Find Me on</p>
-                        <div class="link-icons-group">
-                            <div class="link-icon-container">
-                                <a href="{{ social_media.github }}" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="{{ social_media.linkedin }}" target="_blank">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="{{ social_media.instagram }}" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
+                                <ul>
+                                    <li>am graduate of computer science engineering</li>
+                                    <li>am self-taught engineer</li>
+                                    <li>am skilled in several technologies</li>
+                                    <li>am expert in Python language</li>
+                                    <li>can be called a full-stack web developer</li>
+                                    <li>am able to automate things</li>
+                                    <li>am living in Ahmedabad city of Gujarat State in India</li>
+                                    <li>am an employee of organization and been working as python developer since
+                                        January,
+                                        2022
+                                    </li>
+                                    <li>like to contribute to the community; like pushing code to github or answering in
+                                        stackoverflow are too often for me
+                                    </li>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7">
-                <div class="contact-form">
-                    <h1>Drop a Line</h1>
-                    <form id="contact-form" action="{% url 'home' %}" method="POST">
-                        <div class="row">
-                            <div class="col-md-12" id="results"></div>
+        </div>
+
+    </section>
+
+    <section id="skills">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div id="skills_heading">
+                        <span>S</span>
+                        <span>K</span>
+                        <span>I</span>
+                        <span>L</span>
+                        <span>L</span>
+                        <span>S</span>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div id="skills_container_wrapper">
+                        <ul>
+                            {% for skill in skills %}
+                                <li>
+                                    <a href="{{ skill.link }}">
+                                        <div id="skill_image_wrapper">
+                                            <img src="{{ skill.logo.url }}">
+                                        </div>
+                                        <span>
+                                    {{ skill.name|title }}
+                                </span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="projects">
+
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+
+                {% for project in projects %}
+                    <div class="projects_container_wrapper shadow-large">
+                        <div class="project-image">
+                            <img src="{{ project.image.url }}">
                         </div>
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div>
-                                    <input type="text" placeholder="Name" id="contact_name">
+
+                        <div class="project-info">
+                            <h3>{{ project.title|title }}</h3>
+                            <p>
+                                {{ project.description }}
+                            </p>
+                            <a href="{{ project.link }}" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="view_all_btn_wrapper">
+                    <a href="{% url 'project_list' %}" class="button-theme">Show All</a>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="blogs">
+        <div class="container">
+            <div class="row heading">
+                <h2>Blogs</h2>
+            </div>
+            <div class="row">
+                <div id="blogs_container_wrapper">
+
+                    <ul class="blog-posts-list">
+                        {% for blog in blogs %}
+                            <li class="blog-post-item">
+                                <a href="{% url 'blog_detail' blog_id=blog.id %}">
+                                    <figure class="blog-banner-box">
+                                        <img src="{{ blog.image.url }}" alt="" loading="lazy">
+                                    </figure>
+
+                                    <div class="blog-content">
+                                        <div class="blog-meta">
+                                            <time datetime="2022-02-23">Fab 23, 2022</time>
+                                        </div>
+
+                                        <h3 class="h3 blog-item-title">{{ blog.title|title|truncatechars:20 }}</h3>
+
+                                        <p class="blog-text">
+                                            {{ blog.description|truncatechars:120 }}
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="view_all_btn_wrapper">
+                        <a href="{% url 'blog_list' %}" class="button-theme">Show All</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="contact-content">
+                        <h1>Contact</h1>
+                        <p>Let's make something new, different and more meaningful or make thing more visual or
+                            conceptual?</p>
+                        <div class="contact-group">
+                            <div class="contact-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-phone-square-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <p>Call Me</p>
+                                    <p>+91 81419 93590</p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div>
-                                    <input type="text" placeholder="Phone" id="contact_phone">
+                            <div class="contact-item">
+                                <div class="icon-container">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <p>Email</p>
+                                    <p>desaiparth971@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon-container">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <p>Address</p>
+                                    <p>Gujarat, India</p>
+                                </div>
+                            </div>
+                            <p>Find Me on</p>
+                            <div class="link-icons-group">
+                                <div class="link-icon-container">
+                                    <a href="{{ social_media.github }}" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="{{ social_media.linkedin }}" target="_blank">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="{{ social_media.instagram }}" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <input type="email" placeholder="Email" id="contact_email">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="contact-form">
+                        <h1>Drop a Line</h1>
+                        <form id="contact-form" action="{% url 'home' %}" method="POST">
+                            <div class="row">
+                                <div class="col-md-12" id="results"></div>
+                            </div>
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div>
+                                        <input type="text" placeholder="Name" id="contact_name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        <input type="text" placeholder="Phone" id="contact_phone">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="email" placeholder="Email" id="contact_email">
+
+                                </div>
 
                             </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
                                 <textarea name="txtarea" cols="30" rows="10" placeholder="Message"
-                                    class="textarea-margin" id="contact_message"></textarea>
+                                          class="textarea-margin" id="contact_message"></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <button type="submit" class="button-theme submit-btn">Submit</button>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <button type="submit" class="button-theme submit-btn">Submit</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <hr>
+                        <p>Copyright &copy; 2023 Parth Desai. All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="copyright">
-                    <hr>
-                    <p>Copyright &copy; 2023 Parth Desai. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
-{% endblock %}
+{% endblock body %}
